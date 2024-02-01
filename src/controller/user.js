@@ -63,6 +63,8 @@ const getStudent_by_id = async (req,res) =>{
 }
 const deletestudent = async (req,res)=>{
     try {
+        console.log("hi front end")
+        console.log(req.params.id)
         let value = await UserModel.findOne({_id:req.params.id})
         if(value){
             await UserModel.deleteOne({_id:req.params.id})
@@ -83,6 +85,8 @@ const deletestudent = async (req,res)=>{
 }
 const editUsers = async (req,res)=>{
     try {
+        console.log("welcome")
+        console.log(req.params.id)
         let value = await UserModel.findOne({_id:req.params.id})
         if(value){
             value.name=req.body.name
